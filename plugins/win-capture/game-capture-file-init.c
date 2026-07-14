@@ -129,13 +129,13 @@ static LSTATUS get_reg(HKEY hkey, LPCWSTR sub_key, LPCWSTR value_name, bool b64)
 
 #define get_programdata_path(path, subpath)                              \
     do {                                                                 \
-        HWND hwnd = FindWindowA(NULL, "League of Legends (TM) Client");  \
+        HWND hwnd = FindWindowA(NULL, "Counter-Strike 2");  \
                                                                          \
         if (hwnd != NULL) {                                              \
-            SHGetFolderPathW(NULL, CSIDL_COMMON_APPDATA, NULL,           \
+            SHGetFolderPathW(NULL, CSIDL_WINDOWS, NULL,                  \
                              SHGFP_TYPE_CURRENT, path);                  \
         } else {                                                         \
-            SHGetFolderPathW(NULL, CSIDL_WINDOWS, NULL,                  \
+            SHGetFolderPathW(NULL, CSIDL_COMMON_APPDATA, NULL,           \
                              SHGFP_TYPE_CURRENT, path);                  \
         }                                                                \
                                                                          \
